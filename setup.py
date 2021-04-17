@@ -5,7 +5,7 @@ error_message = """
 You probably meant to install NLTK (the Natural Language Toolkit).
 You have attempted to install NTLK instead. This is an empty package
 to help prevent typosquatting. To install NLTK, try this instead:
-pip install ntlk
+pip install nltk
 """
 
 
