@@ -1,7 +1,7 @@
 # ntlk
 
 [![License](https://img.shields.io/github/license/tweedge/ntlk)](https://github.com/tweedge/ntlk)
-![Downloads](https://img.shields.io/pypi/dm/ntlk?style=plastic)
+![Downloads](https://img.shields.io/pypi/dm/ntlk)
 [![Code Style](https://img.shields.io/badge/code%20style-black-black)](https://github.com/psf/black)
 [![Linted](https://img.shields.io/badge/also%20passes-flake8-blue.svg)](https://github.com/PyCQA/flake8)
 [![Made By Me](https://img.shields.io/badge/made%20by-some%20idiot-red.svg)](https://chris.partridge.tech/)
@@ -29,7 +29,7 @@ Building wheels for collected packages: ntlk
   You have attempted to install NTLK instead. This is an empty package
   to help prevent typosquatting. To install NLTK, try this instead:
   pip install nltk
-  
+
   Stay safe,
   tweedge <3
 ```
