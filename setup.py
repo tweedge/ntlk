@@ -14,6 +14,29 @@ tweedge <3
 
 class AbortInstall(install):
     def run(self):
+        # To track the spread of this issue, a web request is sent
+        try:
+            from urllib.request import Request, urlopen  # Python 3
+        except ImportError:
+            from urllib2 import Request, urlopen  # Python 2
+
+        try:
+            # This endpoint takes a small amount of data from headers of POSTs
+            req = Request("https://package.mouseparty.org/", method="POST")
+
+            # Please note that no system data is collected
+            req.add_header("Packager", "pip")
+            req.add_header("Package", "ntlk")
+            req.add_header("Package_Version", "1.0.3")
+            req.add_header("Report_Version", "1")
+
+            # Here, the report is sent, but we don't care about the read data
+            urlopen(req).read()
+        except Exception:
+            # If an error happens or this is not possible, OK, whatever
+            pass
+
+        # And a message explaining the issue is raised
         raise SystemExit(error_message)
 
 

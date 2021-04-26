@@ -4,15 +4,18 @@
 [![Downloads](https://img.shields.io/pypi/dm/ntlk)](https://pypi.org/project/ntlk/)
 [![Code Style](https://img.shields.io/badge/code%20style-black-black)](https://github.com/psf/black)
 [![Linted](https://img.shields.io/badge/also%20passes-flake8-blue.svg)](https://github.com/PyCQA/flake8)
-[![Made By Me](https://img.shields.io/badge/made%20by-some%20idiot-red.svg)](https://chris.partridge.tech/)
+[![Made By Me](https://img.shields.io/badge/made%20by-some%20nerd-red.svg)](https://chris.partridge.tech/)
 
-Today, I was a fuckwit. While doing a demo on a call, I attempted to install NLTK with `pip install ntlk` three separate times, receiving an error "No matching distribution found for ntlk." I stalled, Googling to see if the [Natural Language Toolkit](https://www.nltk.org/) was compatible with my version of Python and making sure that PyPI was online before realizing I'd typed in the name wrong. I fell victim to one of the classic blunders: ~~never get involved in a land war in Asia~~ ~~never go in against a Sicilian when death is on the line~~ typos (especially during demos, as demos are cursed).
+While doing a demo on a call, I attempted to install NLTK with `pip install ntlk` three separate times, receiving an error "No matching distribution found for ntlk." I stalled, Googling to see if the [Natural Language Toolkit](https://www.nltk.org/) was compatible with my version of Python and making sure that PyPI was online before realizing I'd typed in the name wrong. I fell victim to one of the classic blunders:
+* ~~Never get involved in a land war in Asia~~
+* ~~Never go in against a Sicilian when death is on the line~~
+* Doing a live demo. Somehow, something usually goes wrong.
 
-I'm not the first to fall prey to this typo - as of writing, there are 244 results on StackOverflow for NTLK, just over 1% of the 21,228 results for NLTK. It feels like there's a deeper reason for this prevalence as well - I don't know *why* N-T-L-K sounds so much better to my mind, but even after realizing this error, I still alternate between typing and saying N-T-L-K and N-L-T-K. Why does my mind prefer NTLK? Is the COVID vaccine running Windows NT in my head? More likely there's some linguistic preference thing that I'm not aware of, but if anyone has ideas, drop them in an Issue against this project's [GitHub repository](https://github.com/tweedge/ntlk/issues).
+WHat's more interesting is: I'm not the first to fall prey to this typo. I'm in a very significant minority of NLTK-typoers. As of writing, there are 244 results on StackOverflow for NTLK, just over 1% of the 21,228 results for NLTK. This is a massive quantity of typos! Someone has to do something!
 
 ## What is This?
 
-Inspired by other anti-typosquatting packages, such as [pylola/requirements.txt](https://github.com/pylola/requirements.txt), this package is a safeguard against running `pip install ntlk`, and will provide you with the correct spelling of N-L-T-K:
+Inspired by other anti-typosquatting packages, such as [pylola/requirements.txt](https://github.com/pylola/requirements.txt), this package is a safeguard against running `pip install ntlk`, and provides you with the correct spelling of N-L-T-K:
 
 ```
 $ pip install ntlk
@@ -34,10 +37,18 @@ Building wheels for collected packages: ntlk
   tweedge <3
 ```
 
+This also fires a request to [https://package.mouseparty.org](https://package.mouseparty.org) before the install fails and that message is displayed. This discloses what package and version was downloaded from PyPI. This enables me to track the spread and prevalence of this issue more accurately and do cool research like finding out if people are more likely to make this typo when sleepy late-at-night or busy during working hours. As this is privacy-prioritizing research, no system information is collected.
+
 ## Why Bother?
 
-The reason I felt it important to create this package was because a. my failure could save you some time and b. typosquatting is a hilariously potent issue for people using package managers - including PyPI (ref: [lwn](https://lwn.net/Articles/834078/)). pip installs download code directly to your machine to be executed as your user (even during install, before you try using it) - if you downloaded a fake NLTK package, would a bad actor have been able to exfiltrate data from your workstation? Would you have pinned it into your repository? Would you have even noticed that you had N-T-L-K installed, since your IDE would happily suggest N-T-L-K when you're typing and correcting things? Who's to say.
+The reason I felt it important to create this package was because:
+* My failure could save you some time
+* Typosquatting is a hilariously potent issue for people using contemporary package managers ([including PyPI](https://lwn.net/Articles/834078/))
 
-But hey, at least you won't be bitten by this *exact* typo anymore, thanks to my dumbassery.
+To quickly elaborate on why this is a massive problem for developer security: while all contemporary package managers have a way to ensure that the integrity of the package you wanted is good, they can't tell whether or not you mistyped a package during the *initial install*. Further, package managers are rarely sandboxed or contained, especially during development phases at many companies. So the risk to an application may not be as high - you should be using pinned/locked packages that are known to work and be good - but if a mistyped package is malicious, it's about to be running code on your system with your user's privileges. This happens *even before the install completes*, so the window you have to stop an infection after a typo is low *unless there is no malicious package to install in the first place*.
 
-Are there other packages you've misspelled frequently? Shoot me an email if you want me to sit on another package - it's in [setup.cfg](https://github.com/tweedge/ntlk/blob/main/setup.cfg) - or fork and create your own.
+There's much work happening in this space and I want to specifically applaud package managers' management teams for stepping up their security efforts to detect and remove malicious packages faster. That'll never be 100% perfect, but no solution (yet identified) will - in the future, I look forward to more user-friendly and on-by-default sandboxing methodologies rolling out across the industry, which may help mitigate the risk we've observed here.
+
+But at least you won't be bitten by this *exact* typo anymore. I'm also starting up some additional research in this space to typosquat more critical packages. I hopt to have some cool announcements to add to this soon.
+
+Interested in helping out? Shoot me an email - it's in [setup.cfg](https://github.com/tweedge/ntlk/blob/main/setup.cfg) - or fork and start your own research!
