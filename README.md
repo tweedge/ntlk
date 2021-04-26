@@ -22,7 +22,7 @@ $ pip install ntlk
 Collecting ntlk
 Building wheels for collected packages: ntlk
   Building wheel for ntlk (setup.py) ... error
-  Complete output (10 lines):
+  Complete output (13 lines):
   running bdist_wheel
   running build
   installing to build/bdist.linux-x86_64/wheel
