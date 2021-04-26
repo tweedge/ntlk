@@ -11,7 +11,7 @@ While doing a demo on a call, I attempted to install NLTK with `pip install ntlk
 * ~~Never go in against a Sicilian when death is on the line~~
 * Doing a live demo. Somehow, something usually goes wrong.
 
-WHat's more interesting is: I'm not the first to fall prey to this typo. I'm in a very significant minority of NLTK-typoers. As of writing, there are 244 results on StackOverflow for NTLK, just over 1% of the 21,228 results for NLTK. This is a massive quantity of typos! Someone has to do something!
+What's more interesting is: I'm not the first to fall prey to this typo. I'm in a very significant minority of NLTK-typoers. As of writing, there are 244 results on StackOverflow for NTLK, just over 1% of the 21,228 results for NLTK. This is a massive quantity of typos! Someone has to do something!
 
 ## What is This?
 
