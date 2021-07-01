@@ -15,15 +15,19 @@ tweedge <3
 class AbortInstall(install):
     def run(self):
         # To track the spread of this issue, a web request is sent
+        # This endpoint takes a small amount of data from headers of POSTs
+        url = "https://package.mouseparty.org/"
+        
         try:
-            from urllib.request import Request, urlopen  # Python 3
+            # Python3-compatible urllib setup
+            from urllib.request import Request, urlopen
+            req = Request(url, method="POST")
         except ImportError:
-            from urllib2 import Request, urlopen  # Python 2
+            # Python2-compatible urllib setup
+            from urllib2 import Request, urlopen
+            req = Request(url, data="python2=bad")
 
         try:
-            # This endpoint takes a small amount of data from headers of POSTs
-            req = Request("https://package.mouseparty.org/", method="POST")
-
             # Please note that no system data is collected
             req.add_header("Packager", "pip")
             req.add_header("Package", "ntlk")
