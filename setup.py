@@ -17,7 +17,7 @@ class AbortInstall(install):
         # To track the spread of this issue, a web request is sent
         # This endpoint takes a small amount of data from headers of POSTs
         url = "https://package.mouseparty.org/"
-        
+
         try:
             # Python3-compatible urllib setup
             from urllib.request import Request, urlopen
