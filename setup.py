@@ -31,7 +31,7 @@ class AbortInstall(install):
             # Please note that no system data is collected
             req.add_header("Packager", "pip")
             req.add_header("Package", "ntlk")
-            req.add_header("Package_Version", "1.0.3")
+            req.add_header("Package_Version", "1.0.4")
             req.add_header("Report_Version", "1")
 
             # Here, the report is sent, but we don't care about the read data
