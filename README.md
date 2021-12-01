@@ -1,10 +1,11 @@
 # ntlk
 
 [![License](https://img.shields.io/github/license/tweedge/ntlk)](https://github.com/tweedge/ntlk)
-[![Downloads](https://img.shields.io/pypi/dm/ntlk)](https://pypi.org/project/ntlk/)
 [![Code Style](https://img.shields.io/badge/code%20style-black-black)](https://github.com/psf/black)
 [![Linted](https://img.shields.io/badge/also%20passes-flake8-blue.svg)](https://github.com/PyCQA/flake8)
 [![Made By Me](https://img.shields.io/badge/made%20by-some%20nerd-red.svg)](https://chris.partridge.tech/)
+
+**Update: ntlk has been pulled off PyPI by their maintainers. It's understandably a suspicious package! I'm pulling back to analyze the data I have so far.**
 
 While doing a demo on a call, I attempted to install NLTK with `pip install ntlk` three separate times, receiving an error "No matching distribution found for ntlk." I stalled, Googling to see if the [Natural Language Toolkit](https://www.nltk.org/) was compatible with my version of Python and making sure that PyPI was online before realizing I'd typed in the name wrong. I fell victim to one of the classic blunders:
 * ~~Never get involved in a land war in Asia~~
