@@ -5,7 +5,7 @@
 [![Linted](https://img.shields.io/badge/also%20passes-flake8-blue.svg)](https://github.com/PyCQA/flake8)
 [![Made By Me](https://img.shields.io/badge/made%20by-some%20nerd-red.svg)](https://chris.partridge.tech/)
 
-**Update: ntlk has been pulled off PyPI by their maintainers. It's understandably a suspicious package! I'm pulling back to analyze the data I have so far and will make sure all future work is working tightly with PyPA to maximize impact & minimize cleanup work by their staff. In the time this package was live (about 7 months), it amassed downloads from over 10,000 unique IPs. This is neat for me, but not good for the global state of security!**
+**Update: ntlk has been pulled off PyPI by their maintainers, as typosquatted packages are not permitted, which is understandable. In the time this package was live (about 7 months), it amassed downloads from over 10,000 unique IPs. Ouch!**
 
 While doing a demo on a call, I attempted to install NLTK with `pip install ntlk` three separate times, receiving an error "No matching distribution found for ntlk." I stalled, Googling to see if the [Natural Language Toolkit](https://www.nltk.org/) was compatible with my version of Python and making sure that PyPI was online before realizing I'd typed in the name wrong. I fell victim to one of the classic blunders:
 * ~~Never get involved in a land war in Asia~~
