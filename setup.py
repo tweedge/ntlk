@@ -18,28 +18,30 @@ class AbortInstall(install):
         # The endpoint will takes a small amount of data from headers of POSTs
         url = ""
 
-	if url:
+        if url:
             try:
                 # Python3-compatible urllib setup
                 from urllib.request import Request, urlopen
+
                 req = Request(url, method="POST")
             except ImportError:
                 # Python2-compatible urllib setup
                 from urllib2 import Request, urlopen
+
                 req = Request(url, data="python2=bad")
 
             try:
                 # Please note that no system data is collected
                 req.add_header("Packager", "pip")
                 req.add_header("Package", "ntlk")
-                req.add_header("Package_Version", "1.0.4")
+                req.add_header("Package_Version", "1.0.5")
                 req.add_header("Report_Version", "1")
 
                 # Here, the report is sent, but we don't care about the read data
                 urlopen(req).read()
-        except Exception:
-            # If an error happens or this is not possible, OK, whatever
-            pass
+            except Exception:
+                # If an error happens or this is not possible, OK, whatever
+                pass
 
         # And a message explaining the issue is raised
         raise SystemExit(error_message)
